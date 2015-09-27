@@ -5,7 +5,7 @@ data(mtcars)
 inTrain<-createDataPartition(y=mtcars$mpg,p=0.75,list=FALSE)
 training<-mtcars[inTrain,]
 
-modFit<- train(mpg ~ cyl + hp + wt , method = "lm", data=cars)
+modFit<- train(mpg ~ cyl + hp + wt , method = "lm", data=training)
 
 mpgprec <- function(cyl, hp, wt) 
 {
